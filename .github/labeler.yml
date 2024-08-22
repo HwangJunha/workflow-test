@@ -1,4 +1,4 @@
 temp:
-  - '..any'
+  - '**/*.all'
 bug:
-  - 'any'
+  - '**/*.any'

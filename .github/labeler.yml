@@ -1,4 +1,4 @@
-temp:
+java:
   - '**/*.java'
-bug:
+cpp:
   - '**/*.cpp'

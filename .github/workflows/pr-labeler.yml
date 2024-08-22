@@ -1,3 +1,4 @@
+# .github/workflows/pr-labeler.yml
 
 # workflow 의 이름
 name: PR labeler
@@ -6,24 +7,19 @@ name: PR labeler
 on:
   pull_request:
     types: [opened]
-  schedule:
-    - cron: '0 0/1 * * * ?'
-    
+
 # 트리거되었을 때 실행될 job 작성
 jobs:
   labeler:
+  	# runner 설정
     runs-on: ubuntu-latest
+    # 리파지토리에 대한 권한 설정
     permissions:
       contents: read
       pull-requests: write
     steps:
       - name: Check Labels
         id: labeler
-        uses: actions/labeler@v4
+        uses: jimschubert/labeler-action@v1
         with:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-          sync-labels: true
-      - name: Update D-n Labels
-        uses: naver/d-day-labeler@latest
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

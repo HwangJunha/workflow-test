@@ -3,6 +3,8 @@ enable:
   prs: true
 
 labels:
+  'D-5':
+    - '**/*'
   'bug':
     include:
       - '\bfix\b'

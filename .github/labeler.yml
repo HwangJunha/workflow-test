@@ -1,6 +1,2 @@
-enable:
-  issues: false
-  prs: true
-
 temp:
   - '..any':

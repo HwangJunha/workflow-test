@@ -19,5 +19,5 @@ jobs:
         id: labeler
         uses: jimschubert/labeler-action@v1
         with:
-          labels: D-5
+          labels: "D-5"
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}

@@ -5,7 +5,7 @@ enable:
 labels:
   'D-5':
     include:
-      - '.'
+      - '/./g'
   'bug':
     include:
       - '\bfix\b'

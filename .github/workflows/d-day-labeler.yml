@@ -6,37 +6,6 @@ jobs:
   d-day-labeler:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Update D-n Labels
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: echo-02
         run: |
-          LABEL_PREFIX="D-"
-          
-          # 모든 오픈된 PR 가져오기
-          prs=$(gh pr list --state open --json number,labels --jq '.[] | {number: .number, label: (.labels[]?.name | select(startswith($LABEL_PREFIX)))}')
-          
-          for pr in $(echo "${prs}" | jq -c '.'); do
-            PR_NUMBER=$(echo "${pr}" | jq -r '.number')
-            CURRENT_LABEL=$(echo "${pr}" | jq -r '.label')
-          
-            if [ -n "$CURRENT_LABEL" ]; then
-              # 현재 라벨에서 숫자 추출 (예: D-3 -> 3)
-              CURRENT_DAY=${CURRENT_LABEL#"$LABEL_PREFIX"}
-          
-              # 새로운 라벨 계산
-              NEW_DAY=$((CURRENT_DAY - 1))
-          
-              # D-day 라벨 처리
-              if [ "$NEW_DAY" -eq 0 ]; then
-                NEW_LABEL="D-day"
-              else
-                NEW_LABEL="${LABEL_PREFIX}${NEW_DAY}"
-              fi
-          
-              # 기존 라벨 제거 및 새로운 라벨 추가
-              gh pr edit $PR_NUMBER --remove-label "$CURRENT_LABEL" --add-label "$NEW_LABEL"
-            fi
-          done
+          echo "TEST ECHO-02"

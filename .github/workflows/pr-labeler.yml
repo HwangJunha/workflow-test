@@ -6,6 +6,8 @@ name: PR labeler
 on:
   pull_request:
     types: [opened]
+  schedule:
+    - cron: '0 0/1 * * * ?'
     
 # 트리거되었을 때 실행될 job 작성
 jobs:
@@ -21,3 +23,7 @@ jobs:
         with:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           sync-labels: true
+      - name: Update D-n Labels
+        uses: naver/d-day-labeler@latest
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

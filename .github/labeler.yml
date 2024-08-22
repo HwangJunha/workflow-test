@@ -2,28 +2,5 @@ enable:
   issues: false
   prs: true
 
-labels:
-  'D-5':
-    include:
-      - '\bfeature\b'
-  'bug':
-    include:
-      - '\bfix\b'
-  'enhancement':
-    include:
-      - '\bfeat\b'
-  'documentation':
-    include:
-      - '\bdocs\b'
-  'release':
-    include:
-      - '\brelease\b'
-  'refactoring':
-    include:
-      - '\brefactor\b'
-  'test':
-    include:
-      - '\btest\b'
-  'temp':
-    include:
-      - '\btemp\b''
+temp:
+  - '..any':

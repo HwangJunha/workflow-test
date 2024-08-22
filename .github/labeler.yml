@@ -24,3 +24,6 @@ labels:
   'test':
     include:
       - '\btest\b'
+  'temp':
+    include:
+      - '\btemp\b''

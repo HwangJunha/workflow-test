@@ -1,23 +1,6 @@
-enable:
-  issues: false
-  prs: true
-
-labels:
-  'bug':
-    include:
-      - '\bfix\b'
-  'enhancement':
-    include:
-      - '\bfeat\b'
-  'documentation':
-    include:
-      - '\bdocs\b'
-  'release':
-    include:
-      - '\brelease\b'
-  'refactoring':
-    include:
-      - '\brefactor\b'
-  'test':
-    include:
-      - '\btest\b'
+D-5:
+  - '**/*'
+java:
+  - '**/*.java'
+cpp:
+  - '**/*.cpp'

@@ -1,2 +1,4 @@
 temp:
-  - '..any':
+  - '..any'
+bug:
+  - 'any'

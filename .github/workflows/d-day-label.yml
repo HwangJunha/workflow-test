@@ -1,4 +1,4 @@
-name: Update D-n Labels
+name: d-day-label
 on:
   schedule:
     - cron: "*/10 * * * *"
@@ -9,7 +9,7 @@ jobs:
       contents: read
       pull-requests: write
     steps:
-      - name: Update D-n Labels
+      - name: d-day-label
         uses: naver/d-day-labeler@latest
         with:
           token: ${{ secrets.GITHUB_TOKEN }}

@@ -1,10 +1,13 @@
 name: Update D-n Labels
 on:
   schedule:
-    - cron: '20 * * * *'
+    - cron: '50 * * * *'
 jobs:
   d-day-labeler:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
     steps:
       - name: Update D-n Labels
         uses: naver/d-day-labeler@latest

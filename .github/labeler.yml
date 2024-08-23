@@ -3,7 +3,7 @@ enable:
   prs: true
 
 labels:
-  'bug':
+  'D-5':
     include:
       - '\bfix\b'
   'enhancement':

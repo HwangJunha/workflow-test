@@ -1,7 +1,7 @@
 name: Update D-n Labels
 on:
   schedule:
-    - cron: "30 05 * * *"
+    - cron: "35 5 * * *"
 jobs:
   d-day-labeler:
     runs-on: ubuntu-latest

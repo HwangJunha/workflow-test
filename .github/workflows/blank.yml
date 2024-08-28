@@ -1,0 +1,17 @@
+name: Run Action on Label
+
+on:
+  pull_request:
+    types: [labeled]  # 라벨이 붙을 때 트리거
+
+jobs:
+  check-label:
+    runs-on: ubuntu-latest
+    if: contains(github.event.label.name, 'bug') 
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Run your script
+        run: echo "This action runs because the label is present!"
